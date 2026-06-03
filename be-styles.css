@@ -434,15 +434,15 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; letter-spacing: -0
   border-radius: 26px; padding: 36px 34px; box-shadow: var(--shadow-lg);
   transform: translateY(16px) scale(.97); opacity: 0; transition: transform .35s cubic-bezier(.2,.7,.3,1), opacity .35s; text-align: center;
 }
-.modal-card--cal { width: min(860px, 96vw); padding: 20px 24px 16px; max-height: 96vh; display: flex; flex-direction: column; }
+.modal-card--cal { width: min(860px, 96vw); padding: 20px 24px 16px; overflow-y: auto; }
 .cal-head { display: flex; align-items: center; gap: 14px; text-align: left; margin-bottom: 14px; }
 .cal-head .ico-lg { margin: 0; flex-shrink: 0; width: 44px; height: 44px; }
 .cal-head h3 { font-size: 18px; margin-bottom: 3px; }
 .cal-head p { font-size: 13px; margin-bottom: 0; }
-.cal-embed { flex: 1; min-height: 660px; width: 100%; border-radius: 14px; overflow: hidden; }
-.cal-embed .calendly-inline-widget { min-width: 100%; height: 100%; }
+.cal-embed { width: 100%; height: 700px; border-radius: 14px; overflow: hidden; }
+.cal-embed .calendly-inline-widget, .cal-embed iframe { min-width: 100% !important; width: 100% !important; height: 700px !important; }
 .modal-card--cal .alt { margin-top: 10px; }
-@media (max-width: 560px) { .cal-embed { min-height: 580px; } }
+@media (max-width: 560px) { .cal-embed, .cal-embed .calendly-inline-widget, .cal-embed iframe { height: 600px !important; } }
 .modal.open .modal-card { transform: none; opacity: 1; }
 .modal-card .x { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg-2); color: var(--muted); cursor: pointer; display: grid; place-items: center; font-size: 16px; }
 .modal-card .x:hover { color: var(--text); }
